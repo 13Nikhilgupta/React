@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import List from "./List";
 
 function App() {
 
@@ -21,7 +22,12 @@ function App() {
       </div>
       <div>
         <ul>
-          {items.map( item => <li>{item}</li> )}
+          {items.map( (item , index) => <List key={index}
+          id={index}
+          item={item} 
+          handleClick={(id) => {
+            setItems( prevItems => prevItems.filter( (value , index) => index !== id))
+            }} /> )}
         </ul>
       </div>
     </div>
