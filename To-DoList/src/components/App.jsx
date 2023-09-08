@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import List from "./List";
+import InputArea from "./InputArea";
 
 function App() {
 
-  const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
 
   return (
@@ -11,15 +11,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input onChange={ event => (setInputText(event.target.value)) } value={inputText} type="text" />
-        <button onClick={ () => {
-          setItems(prevItems => ([...prevItems , inputText]));
-          setInputText("");
-          }}>
-          <span>Add</span>
-        </button>
-      </div>
+      <InputArea setItems={setItems}/>
       <div>
         <ul>
           {items.map( (item , index) => <List key={index}
