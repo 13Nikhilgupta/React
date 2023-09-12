@@ -1,10 +1,9 @@
 import React from "react";
+import {Subject} from "@material-ui/icons";
 
 function Header(){
     return(
-        <div>
-            <header><h1>Note-It</h1></header>
-        </div>
+        <header><h1><Subject/> Note-It</h1></header>
     );
 };
 
